@@ -8,7 +8,7 @@ const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
         <li className="list__item">
             <div className="list__link" >
                 <div className="list__img-wrap">
-                    <img className="list__img" src={img_src} alt="image"/>
+                    <img className="list__img" src={img_src} alt="promo-beer"/>
                 </div>
                 <div className="list__content">
                     <div className="list__name">
