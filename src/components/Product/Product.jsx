@@ -1,4 +1,7 @@
 import React from 'react';
+import ProductMethod from "./ProductMethod";
+import ProductIngredients from "./ProductIngredients";
+import ProductEnumeration from "./ProductEnumeration";
 
 const Product = (props) => {
 
@@ -98,6 +101,7 @@ const Product = (props) => {
                         <div className="product__bottom-title">
                             Объем
                         </div>
+
                         <ul className="list__information-list product__item">
                             <li className="list__information-item">
                                 <div className="list__information-left-wrap">
@@ -110,6 +114,7 @@ const Product = (props) => {
                   {item.volume.value}
                 </span>
                             </li>
+
                             <li className="list__information-item">
                                 <div className="list__information-left-wrap">
                   <span className="list__information-left">
@@ -124,35 +129,23 @@ const Product = (props) => {
 
 
                         </ul>
+
                         <div className="product__bottom-title">
                             Метод готовки
                         </div>
+
                         <div className="product__item product__method">
+
                             <div className="product__method-title">
                                 Температурная обработка
                             </div>
-                            <ul className="product__method-list">
-                                {
-                                    item.method.mash_temp.map((item, index) => (
-                                            <li key={index} className="product__method-item">
-                                                <div className="product__method-sub-item">
-                                                    <span>Темпарутра: </span>
-                                                    <span>{item.temp.value} °C</span>
-                                                </div>
-                                                <div className="product__method-sub-item">
-                                                    <span>Продолжительность: </span>
-                                                    <span>{item.duration} мин</span>
-                                                </div>
 
-                                            </li>
-                                        )
-                                    )
-                                }
+                            <ProductMethod item={item.method}/>
 
-                            </ul>
                             <div className="product__method-title">
                                 Ферментация
                             </div>
+
                             <ul className="product__method-list">
                                 <li className="product__method-item">
                                     <div className="product__method-sub-item">
@@ -161,42 +154,20 @@ const Product = (props) => {
                                     </div>
                                 </li>
                             </ul>
+
                         </div>
                         <div className="product__bottom-title">
                             Ингредиенты
                         </div>
-                        <ul className="list__information-list product__item">
-                            {
-                                item.ingredients.malt.map((item, i) => (
-                                    <li key={i} className="list__information-item">
-                                        <div className="list__information-left-wrap">
-                  <span className="list__information-left">
-                   {item.name}
-                  </span>
-                                        </div>
 
-                                        <span className="list__information-right">
-                   {item.amount.value || "Нет данных"}, кг
-                </span>
-                                    </li>
-                                ))
-                            }
+                        <ProductIngredients item={item.ingredients}/>
 
-
-                        </ul>
                         <div className="product__bottom-title">
                             Сочетается с блюдами:
                         </div>
-                        <ul className="product__enumeration">
-                            {
-                                item.food_pairing.map((item, i) => (
-                                    <li key={i} className="product__enumeration-item">
-                                        <span>{item}</span>
-                                    </li>
-                                ))
-                            }
 
-                        </ul>
+                       <ProductEnumeration item={item.food_pairing}/>
+
                     </div>
                 </div>
             </div>
