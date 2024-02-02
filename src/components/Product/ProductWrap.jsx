@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
-import {getProduct} from "../../store/productsReducer";
 import Loading from "../Loading/Loading";
 import Product from "./Product";
+import {getProduct} from "../../store/productsThunks";
 
 const ProductWrap = () => {
 

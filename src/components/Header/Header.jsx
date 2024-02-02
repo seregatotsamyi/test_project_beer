@@ -10,9 +10,9 @@ const Header = () => {
                     <Link className="header__logo logo" to={"/"}>
                         <img className="logo__img" src={IconStore.LogoImg} alt="logo" width="98" height="27"/>
                     </Link>
-                    <div className="header__text">
+                    <h1 className="header__text">
                         Лучшее пиво со всего мира!
-                    </div>
+                    </h1>
                 </div>
             </div>
         </header>

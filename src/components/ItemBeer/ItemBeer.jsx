@@ -3,17 +3,21 @@ import {Link} from "react-router-dom";
 
 const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
 
+    const checkingForEmptiness = (item) => {
+        return item ? item : "Нет данных"
+    }
+
     return (
 
         <li className="list__item">
-            <div className="list__link" >
+            <div className="list__link">
                 <div className="list__img-wrap">
                     <img className="list__img" src={img_src} alt="promo-beer"/>
                 </div>
                 <div className="list__content">
-                    <div className="list__name">
+                    <h3 className="list__name">
                         {name}
-                    </div>
+                    </h3>
                     <div className="list__tagline">
                         {tagline}
                     </div>
@@ -32,7 +36,7 @@ const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
                                 </div>
 
                                 <span className="list__information-right">
-                        {props.abv || "Нет данных"}
+                        {checkingForEmptiness(props.abv)}
                       </span>
                             </li>
                             <li className="list__information-item">
@@ -43,7 +47,7 @@ const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
                                 </div>
 
                                 <span className="list__information-right">
-                        {props.ibu || "Нет данных"}
+                        {checkingForEmptiness(props.ibu)}
                       </span>
                             </li>
                             <li className="list__information-item">
@@ -54,7 +58,7 @@ const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
                                 </div>
 
                                 <span className="list__information-right">
-                        {props.ebc || "Нет данных"}
+                        {checkingForEmptiness(props.ebc)}
                       </span>
                             </li>
                             <li className="list__information-item">
@@ -65,7 +69,7 @@ const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
                                 </div>
 
                                 <span className="list__information-right">
-                        {props.srm || "Нет данных"}
+                        {checkingForEmptiness(props.srm)}
                       </span>
                             </li>
                             <li className="list__information-item">
@@ -76,13 +80,13 @@ const ItemBeer = ({img_src, name, tagline, date, id, ...props}) => {
                                 </div>
 
                                 <span className="list__information-right">
-                        {props.ph || "Нет данных"}
+                       {checkingForEmptiness(props.ph)}
                       </span>
                             </li>
 
                         </ul>
                     </div>
-                    <Link className="btn" to={`/product/${id}`} >
+                    <Link className="btn" to={`/product/${id}`}>
                         Узнать подробнее
                     </Link>
                 </div>

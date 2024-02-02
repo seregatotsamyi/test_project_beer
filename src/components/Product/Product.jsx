@@ -8,20 +8,20 @@ const Product = (props) => {
     const {item} = props
 
     return (
-        <section className="product">
-            <div className="container">
+        <section className="product container">
+
                 <div className="product__wrap">
                     <div className="product__top">
                         <div className="product__img-wrap">
                             <img className="product__img" src={item.image_url} alt="product"/>
                         </div>
                         <div className="product__info">
-                            <div className="product__name">
+                            <h2 className="product__name">
                                 {item.name}
-                            </div>
-                            <div className="product__tagline">
+                            </h2>
+                            <blockquote className="product__tagline">
                                 {item.tagline}
-                            </div>
+                            </blockquote>
 
                             <div className="product__date">
                                 <span>Работают с </span>
@@ -170,7 +170,7 @@ const Product = (props) => {
 
                     </div>
                 </div>
-            </div>
+
         </section>
     );
 };
